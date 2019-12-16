@@ -22,9 +22,9 @@ export default new Vuex.Store({
       state.idToken = null;
       state.user = null;
     },
-    addToCart(state: { cart: any; cartCount: any }, item) {
+    addToCart(state: { cart: any; cartCount: number }, item) {
       let found = state.cart.find(
-        (product: { id: any }) => product.id === item.id
+        (product: { id: string }) => product.id === item.id
       );
 
       if (found) {
@@ -39,7 +39,7 @@ export default new Vuex.Store({
 
       state.cartCount++;
     },
-    removeFromCart(state: { cart: any; cartCount: any }, item) {
+    removeFromCart(state: { cart: any; cartCount: number }, item) {
       let index = state.cart.indexOf(item);
 
       if (index > -1) {
@@ -49,9 +49,9 @@ export default new Vuex.Store({
         state.cart.splice(index, 1);
       }
     },
-    increaseQuantity(state: { cart: any; cartCount: any }, item) {
+    increaseQuantity(state: { cart: any; cartCount: number }, item) {
       let addedItem = state.cart.find(
-        (product: { id: any }) => product.id === item.id
+        (product: { id: string }) => product.id === item.id
       );
 
       if (addedItem) {
@@ -66,9 +66,9 @@ export default new Vuex.Store({
 
       state.cartCount++;
     },
-    decreaseQuantity(state: { cart: any; cartCount: any }, item) {
+    decreaseQuantity(state: { cart: any; cartCount: number }, item) {
       let addedItem = state.cart.find(
-        (product: { id: any }) => product.id === item.id
+        (product: { id: string }) => product.id === item.id
       );
 
       if (addedItem) {

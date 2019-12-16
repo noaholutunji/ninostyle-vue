@@ -128,6 +128,7 @@ export default {
     axios.get(`/product/${this.$route.params.id}`).then(res => {
       this.id = res.data.product.id;
       this.name = res.data.product.name;
+      this.brand = res.data.product.brand;
       this.price = res.data.product.price;
       this.image = res.data.product.image;
       this.description = res.data.product.description;
