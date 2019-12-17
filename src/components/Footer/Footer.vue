@@ -3,10 +3,9 @@
     <mdb-footer color="indigo" id="footer" class="font-small pt-4 mt-4">
       <div class="footer-copyright text-center py-3">
         <mdb-container fluid>
-          &copy; 2019 Copyright:
-          <h5 class="text-monospace">
+          <p class="text-monospace">
             NinoStyle Designed by Noah Osuolale with Stutord
-          </h5>
+          </p>
         </mdb-container>
       </div>
     </mdb-footer>
@@ -26,10 +25,12 @@ export default {
 
 <style scoped>
 #footer {
-  position: relative;
+  background-color: #007bff;
+  position: absolute;
   bottom: 0;
   width: 100%;
   left: 0;
+  overflow: hidden;
 }
 .push-up {
   margin-top: 5em;
