@@ -81,6 +81,7 @@ import {
   mdbRow,
   mdbCol,
 } from 'mdbvue';
+
 export default {
   name: 'Basic',
   components: {
@@ -92,6 +93,7 @@ export default {
     mdbRow,
     mdbCol,
   },
+
   data() {
     return {
       name: '',
@@ -101,6 +103,7 @@ export default {
       description: '',
     };
   },
+
   methods: {
     onSubmit() {
       const formData = {
@@ -110,7 +113,6 @@ export default {
         image: this.image,
         description: this.description,
       };
-      console.log(formData);
       axios
         .post('/products', formData, {
           headers: {

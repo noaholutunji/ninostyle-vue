@@ -41,12 +41,13 @@ export default {
     mdbCarousel,
     mdbContainer,
   },
+
   mounted: function() {
     axios.get('/products').then(result => {
-      console.log(result);
       this.products = result.data.products;
     });
   },
+
   data() {
     return {
       products: [],

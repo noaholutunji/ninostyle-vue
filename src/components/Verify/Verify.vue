@@ -52,6 +52,7 @@ import {
   mdbRow,
   mdbCol,
 } from 'mdbvue';
+
 export default {
   name: 'Basic',
   components: {
@@ -63,12 +64,14 @@ export default {
     mdbRow,
     mdbCol,
   },
+
   data() {
     return {
       email: '',
       code: '',
     };
   },
+
   methods: {
     onSubmit() {
       const formData = {

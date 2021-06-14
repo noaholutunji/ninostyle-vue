@@ -1,5 +1,5 @@
 <template>
-  <div class="push-up">
+  <div class="footer-wrapper">
     <mdb-footer color="indigo" id="footer" class="font-small pt-4 mt-4">
       <div class="footer-copyright text-center py-3">
         <mdb-container fluid>
@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import { mdbFooter, mdbContainer, mdbRow, mdbCol } from 'mdbvue';
+import { mdbFooter, mdbContainer } from 'mdbvue';
 export default {
   name: 'FooterPage',
   components: {
@@ -32,7 +32,7 @@ export default {
   left: 0;
   overflow: hidden;
 }
-.push-up {
+.footer-wrapper {
   margin-top: 5em;
 }
 </style>

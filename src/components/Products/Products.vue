@@ -76,6 +76,7 @@ import {
   mdbCardTitle,
   mdbIcon,
 } from 'mdbvue';
+
 export default {
   name: 'JumbotronPage',
   components: {
@@ -90,11 +91,13 @@ export default {
     mdbCardTitle,
     mdbIcon,
   },
+
   data() {
     return {
       products: [],
     };
   },
+
   mounted: function() {
     axios
       .get('/products')
@@ -106,11 +109,13 @@ export default {
         console.log(error);
       });
   },
+
   computed: {
     auth() {
       return this.$store.getters.isAuthenticated;
     },
   },
+
   methods: {
     addToCart(item) {
       alert('Item added to cart!');

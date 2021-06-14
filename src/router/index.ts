@@ -14,44 +14,32 @@ const routes = [
   {
     path: '/login',
     name: 'login',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: () =>
-      import(/* webpackChunkName: "about" */ '../views/Login.vue'),
+      import('../views/Login.vue'),
   },
   {
     path: '/register',
     name: 'register',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: () =>
-      import(/* webpackChunkName: "about" */ '../views/Register.vue'),
+      import('../views/Register.vue'),
   },
   {
     path: '/verify',
     name: 'verify',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: () =>
-      import(/* webpackChunkName: "about" */ '../views/Verify.vue'),
+      import('../views/Verify.vue'),
   },
   {
     path: '/products',
     name: 'products',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: () =>
-      import(/* webpackChunkName: "about" */ '../views/Products.vue'),
+      import('../views/Products.vue'),
   },
   {
     path: '/new',
     name: 'new',
     component: () =>
-      import(/* webpackChunkName: "about" */ '../views/NewProduct.vue'),
+      import('../views/NewProduct.vue'),
     beforeEnter(to: any, from: any, next: any) {
       if (store.state.idToken) {
         next();
@@ -64,13 +52,13 @@ const routes = [
     path: '/product/:id',
     name: 'show',
     component: () =>
-      import(/* webpackChunkName: "about" */ '../views/Show.vue'),
+      import('../views/Show.vue'),
   },
   {
     path: '/edit/:id',
     name: 'edit',
     component: () =>
-      import(/* webpackChunkName: "about" */ '../views/EditProduct.vue'),
+      import('../views/EditProduct.vue'),
     beforeEnter(to: any, from: any, next: any) {
       if (store.state.idToken) {
         next();
@@ -83,19 +71,19 @@ const routes = [
     path: '/cart',
     name: 'cart',
     component: () =>
-      import(/* webpackChunkName: "about" */ '../views/Cart.vue'),
+      import('../views/Cart.vue'),
   },
   {
     path: '/checkout',
     name: 'checkout',
     component: () =>
-      import(/* webpackChunkName: "about" */ '../views/CheckOut.vue'),
+      import('../views/CheckOut.vue'),
   },
   {
     path: '/successfulorder',
     name: 'successfulorder',
     component: () =>
-      import(/* webpackChunkName: "about" */ '../views/Order.vue'),
+      import('../views/Order.vue'),
   },
 ];
 

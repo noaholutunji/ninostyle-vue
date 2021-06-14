@@ -24,11 +24,11 @@
 
           <mdb-tbl-body v-for="item in $store.state.cart" :key="item.id">
             <tr>
-              <th id="yato" scope="row">
+              <th id="img-wrapper" scope="row">
                 <img
                   v-bind:src="item.image"
                   alt
-                  class="img-fluid z-depth-0 log"
+                  class="img-fluid z-depth-0 img-item"
                 />
               </th>
               <td>
@@ -36,12 +36,12 @@
                   <strong>{{ item.name }}</strong>
                 </h5>
               </td>
-              <td class="pad">
+              <td class="cart-item">
                 ₦
                 {{ item.price.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') }}
               </td>
-              <td class="pad">{{ item.quantity }}</td>
-              <td class="pad">
+              <td class="cart-item">{{ item.quantity }}</td>
+              <td class="cart-item">
                 <strong
                   >₦
                   {{
@@ -117,6 +117,7 @@ import {
   mdbTblBody,
   mdbBtn,
 } from 'mdbvue';
+
 export default {
   components: {
     mdbCard,
@@ -126,6 +127,7 @@ export default {
     mdbTblBody,
     mdbBtn,
   },
+
   computed: {
     totalPrice() {
       let total = 0;
@@ -136,10 +138,12 @@ export default {
 
       return total.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
     },
+
     auth() {
       return this.$store.getters.isAuthenticated;
     },
   },
+
   methods: {
     removeFromCart(item) {
       this.$store.commit('removeFromCart', item);
@@ -155,20 +159,16 @@ export default {
 </script>
 
 <style scoped>
-.log {
-  max-height: 150px;
-  min-width: 50px;
-}
-#yato {
-  max-width: 200px !important;
-}
-.pad {
-  padding-top: 4.3rem;
-}
-.beat {
-  border-radius: 10em;
-}
-.logg {
-  color: white !important;
-}
+  .img-item {
+    max-height: 150px;
+    min-width: 50px;
+  }
+
+  #img-wrapper {
+    max-width: 200px !important;
+  }
+
+  .cart-item {
+    padding-top: 4.3rem;
+  }
 </style>

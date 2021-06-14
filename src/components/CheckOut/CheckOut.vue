@@ -126,6 +126,7 @@ import {
   mdbTblHead,
   mdbTblBody,
 } from 'mdbvue';
+
 export default {
   components: {
     mdbContainer,
@@ -138,6 +139,7 @@ export default {
     mdbTblHead,
     mdbTblBody,
   },
+
   computed: {
     totalPrice() {
       let total = 0;
@@ -148,10 +150,12 @@ export default {
 
       return total.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
     },
+
     auth() {
       return this.$store.getters.isAuthenticated;
     },
   },
+
   methods: {
     removeFromCart(item) {
       this.$store.commit('removeFromCart', item);
@@ -165,22 +169,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.log {
-  max-height: 150px;
-  min-width: 50px;
-}
-#yato {
-  max-width: 200px !important;
-}
-.pad {
-  padding-top: 4.3rem;
-}
-.beat {
-  border-radius: 10em;
-}
-.logg {
-  color: white !important;
-}
-</style>

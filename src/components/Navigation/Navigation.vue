@@ -38,7 +38,6 @@ import {
   mdbNavbarToggler,
   mdbNavbarNav,
   mdbNavItem,
-  mdbContainer,
   mdbDropdown,
   mdbDropdownToggle,
   mdbDropdownMenu,
@@ -51,6 +50,7 @@ export default {
       return this.$store.getters.isAuthenticated;
     },
   },
+
   name: 'HelloWorld',
   components: {
     mdbNavbar,
@@ -63,6 +63,7 @@ export default {
     mdbDropdownMenu,
     mdbDropdownItem,
   },
+
   methods: {
     onLogout() {
       this.$store.dispatch('logout');
@@ -70,12 +71,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.log {
-  padding-top: 15px;
-  padding-right: 15px;
-  padding-left: 15px;
-  cursor: pointer;
-}
-</style>

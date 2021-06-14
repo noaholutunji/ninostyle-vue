@@ -49,6 +49,7 @@ import {
   mdbRow,
   mdbCol,
 } from 'mdbvue';
+
 export default {
   name: 'Basic',
   components: {
@@ -60,19 +61,20 @@ export default {
     mdbRow,
     mdbCol,
   },
+
   data() {
     return {
       email: '',
       password: '',
     };
   },
+
   methods: {
     onSubmit() {
       const formData = {
         email: this.email,
         password: this.password,
       };
-      console.log(formData);
       axios
         .post('/register', formData)
         .then(res => {
