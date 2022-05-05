@@ -107,7 +107,7 @@ export default {
   },
   mounted: function() {
     axios.get(`/product/${this.$route.params.id}`).then(res => {
-      this.product = res.data.product
+      this.product = res.data.product;
       this.id = res.data.product.id;
       this.name = res.data.product.name;
       this.brand = res.data.product.brand;
