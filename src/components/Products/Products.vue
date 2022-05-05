@@ -113,8 +113,8 @@ export default {
   },
   methods: {
     addToCart(item) {
-      this.$store.commit('addToCart', item);
       alert('Item added to cart!');
+      this.$store.commit('addToCart', item);
     },
   },
 };

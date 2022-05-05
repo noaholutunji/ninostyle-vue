@@ -17,16 +17,14 @@
           Latest Products
         </h3>
         <mdb-row class="mt-3">
-          <mdb-col class="mt-3 ml-5">
-            <img
-              v-for="product in products.slice(0, 4)"
-              :key="product.id"
-              class="img-fluid mr-5"
-              alt=""
-              cascade
-              top
-              :src="product.image"
-            />
+          <mdb-col
+            class="mt-3 mr-5 ml-2"
+            v-for="product in products.slice(0, 4)"
+            :key="product.id"
+          >
+            <router-link :to="{ path: '/product/' + product.id }">
+              <img class="img-fluid" alt="" cascade top :src="product.image" />
+            </router-link>
           </mdb-col>
         </mdb-row>
       </mdb-container>

@@ -1,6 +1,6 @@
 <template>
   <div class="push-up">
-    <mdb-footer color="indigo" class="footer font-small pt-4 mt-4">
+    <mdb-footer color="indigo" id="footer" class="font-small pt-4 mt-4">
       <div class="footer-copyright text-center py-3">
         <mdb-container fluid>
           &copy; 2019 Copyright:
@@ -25,13 +25,11 @@ export default {
 </script>
 
 <style scoped>
-.footer {
+#footer {
   position: relative;
-  left: 0;
   bottom: 0;
   width: 100%;
-  color: white;
-  text-align: center;
+  left: 0;
 }
 .push-up {
   margin-top: 5em;

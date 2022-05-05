@@ -66,7 +66,7 @@
       <mdb-col md="6">
         <h4 class="text-center mt-4">Order Summary</h4>
         <mdb-card-body>
-          <mdb-tbl>
+          <mdb-tbl responsive>
             <mdb-tbl-head color="mdb-color" class="lighten-5">
               <tr>
                 <th>

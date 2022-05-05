@@ -25,7 +25,17 @@
             </span>
           </mdb-card-title>
           <mdb-card-text>{{ description }}</mdb-card-text>
-          <div v-if="auth">
+          <span class="float-right mt-1">
+            <mdb-btn
+              tag="a"
+              @click="addToCart(product)"
+              size="lg"
+              class="p-1 m-0 mr-2 z-depth-0"
+            >
+              <mdb-icon title="Add To Cart" icon="shopping-cart" />
+            </mdb-btn>
+          </span>
+          <div v-if="auth" class="mr-5">
             <router-link :to="{ path: '/edit/' + id }"
               ><a class="btn btn-primary btn-sm">Edit</a></router-link
             >
@@ -52,12 +62,14 @@ import {
   mdbCardTitle,
   mdbCardText,
   mdbTooltip,
+  mdbIcon,
 } from 'mdbvue';
 export default {
   name: 'JumbotronPage',
   components: {
     mdbBtn,
     mdbCard,
+    mdbIcon,
     mdbRow,
     mdbCardBody,
     mdbCardText,
@@ -66,6 +78,7 @@ export default {
   },
   data() {
     return {
+      product: [],
       id: '',
       name: '',
       brand: '',
@@ -75,6 +88,10 @@ export default {
     };
   },
   methods: {
+    addToCart(item) {
+      alert('Item added to cart!');
+      this.$store.commit('addToCart', item);
+    },
     deleted() {
       axios
         .delete(`/product/${this.$route.params.id}`, {
@@ -90,6 +107,7 @@ export default {
   },
   mounted: function() {
     axios.get(`/product/${this.$route.params.id}`).then(res => {
+      this.product = res.data.product
       this.id = res.data.product.id;
       this.name = res.data.product.name;
       this.brand = res.data.product.brand;
