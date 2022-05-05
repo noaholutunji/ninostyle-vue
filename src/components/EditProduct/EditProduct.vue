@@ -81,6 +81,7 @@ import {
   mdbRow,
   mdbCol,
 } from 'mdbvue';
+
 export default {
   name: 'Basic',
   components: {
@@ -92,6 +93,7 @@ export default {
     mdbRow,
     mdbCol,
   },
+
   data() {
     return {
       id: '',
@@ -102,6 +104,7 @@ export default {
       description: '',
     };
   },
+
   methods: {
     onSubmit() {
       const formData = {
@@ -111,7 +114,6 @@ export default {
         image: this.image,
         description: this.description,
       };
-      console.log(formData);
       axios
         .patch(`/product/${this.$route.params.id}`, formData, {
           headers: {
@@ -124,6 +126,7 @@ export default {
         .catch(error => console.log(error));
     },
   },
+
   mounted: function() {
     axios.get(`/product/${this.$route.params.id}`).then(res => {
       this.id = res.data.product.id;
@@ -134,6 +137,7 @@ export default {
       this.description = res.data.product.description;
     });
   },
+
   computed: {
     auth() {
       return this.$store.getters.isAuthenticated;

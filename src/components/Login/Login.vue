@@ -48,6 +48,7 @@ import {
   mdbRow,
   mdbContainer,
 } from 'mdbvue';
+
 export default {
   name: 'Basic',
   components: {
@@ -59,12 +60,14 @@ export default {
     mdbRow,
     mdbContainer,
   },
+
   data() {
     return {
       email: '',
       password: '',
     };
   },
+
   methods: {
     onSubmit() {
       const formData = {

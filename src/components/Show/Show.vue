@@ -2,12 +2,12 @@
   <div class="mt-5 container">
     <mdb-row class="justify-content-center">
       <mdb-card
-        id="style"
+        id="card-wrapper"
         class="m-2 mx-3 justify-content-center"
         cascade
         ecommerce
       >
-        <mdb-card-image id="style" cascade top alt="" :src="image" waves />
+        <mdb-card-image id="card-wrapper" cascade top alt="" :src="image" waves />
         <mdb-card-body cascade class="text-center">
           <mdb-card-title tag="h5">
             <strong>Name: </strong>
@@ -19,7 +19,7 @@
           </mdb-card-title>
           <mdb-card-title>
             <span class="float-left">
-              <span class="discount mx-2">
+              <span class="mx-2">
                 ₦ {{ price.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') }}
               </span>
             </span>
@@ -64,6 +64,7 @@ import {
   mdbTooltip,
   mdbIcon,
 } from 'mdbvue';
+
 export default {
   name: 'JumbotronPage',
   components: {
@@ -76,6 +77,7 @@ export default {
     mdbCardImage,
     mdbCardTitle,
   },
+
   data() {
     return {
       product: [],
@@ -87,11 +89,13 @@ export default {
       description: '',
     };
   },
+
   methods: {
     addToCart(item) {
       alert('Item added to cart!');
       this.$store.commit('addToCart', item);
     },
+
     deleted() {
       axios
         .delete(`/product/${this.$route.params.id}`, {
@@ -105,6 +109,7 @@ export default {
         .catch(err => console.log(err));
     },
   },
+
   mounted: function() {
     axios.get(`/product/${this.$route.params.id}`).then(res => {
       this.product = res.data.product;
@@ -116,6 +121,7 @@ export default {
       this.description = res.data.product.description;
     });
   },
+
   computed: {
     auth() {
       return this.$store.getters.isAuthenticated;
@@ -125,7 +131,7 @@ export default {
 </script>
 
 <style scoped>
-#style {
+#card-wrapper {
   width: 20rem;
 }
 </style>

@@ -2,6 +2,7 @@
   <Show />
 </template>
 <script lang="ts">
+
 import Vue from 'vue';
 import Component from 'vue-class-component';
 import Show from '@/components/Show/Show.vue';
