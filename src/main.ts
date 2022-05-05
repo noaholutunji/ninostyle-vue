@@ -9,7 +9,7 @@ import 'bootstrap-css-only/css/bootstrap.min.css';
 import 'mdbvue/lib/css/mdb.min.css';
 
 axios.defaults.baseURL =
-  'https://fyrgwksfq7.execute-api.us-east-1.amazonaws.com/prod';
+  'https://n41q44dysf.execute-api.us-east-1.amazonaws.com/prod';
 
 Vue.config.productionTip = false;
 
